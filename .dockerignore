@@ -1,0 +1,6 @@
+**
+!Dockerfile
+!requirements-demo-api.txt
+!scripts
+scripts/**
+!scripts/*.py

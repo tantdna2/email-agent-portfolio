@@ -1,0 +1,18 @@
+[Unit]
+Description=Renew Gmail watch and reconcile missed history
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=@REPO_ROOT@
+ExecStart=@PYTHON@ @REPO_ROOT@/scripts/run_realtime_email_agent.py renew-watch
+EnvironmentFile=%h/.config/email-agent/realtime.env
+UMask=0077
+LimitCORE=0
+NoNewPrivileges=true
+TimeoutStartSec=10min
+Restart=on-failure
+RestartSec=5min
+StandardOutput=journal
+StandardError=journal

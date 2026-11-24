@@ -1,0 +1,25 @@
+[Unit]
+Description=Receive Gmail events through Pub/Sub pull and prepare notification outbox
+After=network-online.target
+Wants=network-online.target
+StartLimitIntervalSec=600
+StartLimitBurst=5
+
+[Service]
+Type=simple
+WorkingDirectory=@REPO_ROOT@
+ExecStart=@PYTHON@ @REPO_ROOT@/scripts/run_realtime_email_agent.py subscribe
+EnvironmentFile=%h/.config/email-agent/realtime.env
+Environment=PYTHONUNBUFFERED=1
+UMask=0077
+LimitCORE=0
+NoNewPrivileges=true
+Restart=on-failure
+RestartSec=30s
+TimeoutStopSec=90s
+KillMode=control-group
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=default.target

@@ -1,0 +1,10 @@
+[Unit]
+Description=Bounded startup replay of a pending Email Agent alert
+
+[Timer]
+OnStartupSec=120s
+Unit=email-agent-alert-replay.service
+AccuracySec=1s
+
+[Install]
+WantedBy=timers.target

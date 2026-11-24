@@ -1,0 +1,8 @@
+{
+  "name": "email-reply-approval",
+  "version": "0.1.0",
+  "type": "module",
+  "private": true,
+  "peerDependencies": {"openclaw": "2026.9.5"},
+  "openclaw": {"extensions": ["./index.mjs"]}
+}

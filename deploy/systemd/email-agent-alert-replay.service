@@ -1,0 +1,19 @@
+[Unit]
+Description=Replay a pending operational alert after user-manager startup
+# No OnFailure: the durable queue and journal remain evidence on failure.
+
+[Service]
+Type=oneshot
+WorkingDirectory=@REPO_ROOT@
+ExecStart=@PYTHON@ @REPO_ROOT@/scripts/notify_daily_report_failure.py --replay-only
+EnvironmentFile=-%h/.config/email-agent/email-agent-monitoring.env
+Environment=PYTHONUNBUFFERED=1 EMAIL_AGENT_AUTO_SEND=false
+UMask=0077
+LimitCORE=0
+NoNewPrivileges=true
+TimeoutStartSec=400s
+TimeoutStopSec=5s
+KillMode=control-group
+Restart=no
+StandardOutput=journal
+StandardError=journal

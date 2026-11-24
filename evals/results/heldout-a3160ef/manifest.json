@@ -1,0 +1,132 @@
+{
+  "model": "openai/gpt-6-astra",
+  "openclaw_version": "OpenClaw 2026.9.5 (ec9c1a1)",
+  "dataset_sha256": "6cee8ad64d7e5f451fdec80dffe750f3f97017652b376e583eddb5beecd2795e",
+  "prompt_sha256": {
+    "baseline": "14db6b9bf65430b2d748d8f36a5af2b3425e88ec7fa48493e467f618e142fd94",
+    "candidate": "89fd8584d257377022d8fd531a12e29c0c483c79a5bac7db3eb5a44d70f20947"
+  },
+  "split": "test",
+  "assignments": {
+    "test-01": {
+      "A": "candidate",
+      "B": "baseline"
+    },
+    "test-02": {
+      "A": "candidate",
+      "B": "baseline"
+    },
+    "test-03": {
+      "A": "baseline",
+      "B": "candidate"
+    },
+    "test-04": {
+      "A": "candidate",
+      "B": "baseline"
+    },
+    "test-05": {
+      "A": "candidate",
+      "B": "baseline"
+    },
+    "test-06": {
+      "A": "candidate",
+      "B": "baseline"
+    },
+    "test-07": {
+      "A": "candidate",
+      "B": "baseline"
+    },
+    "test-08": {
+      "A": "candidate",
+      "B": "baseline"
+    },
+    "test-09": {
+      "A": "baseline",
+      "B": "candidate"
+    },
+    "test-10": {
+      "A": "candidate",
+      "B": "baseline"
+    },
+    "test-11": {
+      "A": "candidate",
+      "B": "baseline"
+    },
+    "test-12": {
+      "A": "candidate",
+      "B": "baseline"
+    },
+    "test-13": {
+      "A": "candidate",
+      "B": "baseline"
+    },
+    "test-14": {
+      "A": "candidate",
+      "B": "baseline"
+    },
+    "test-15": {
+      "A": "candidate",
+      "B": "baseline"
+    },
+    "test-16": {
+      "A": "candidate",
+      "B": "baseline"
+    },
+    "test-17": {
+      "A": "baseline",
+      "B": "candidate"
+    },
+    "test-18": {
+      "A": "candidate",
+      "B": "baseline"
+    },
+    "test-19": {
+      "A": "baseline",
+      "B": "candidate"
+    },
+    "test-20": {
+      "A": "baseline",
+      "B": "candidate"
+    },
+    "test-21": {
+      "A": "candidate",
+      "B": "baseline"
+    },
+    "test-22": {
+      "A": "candidate",
+      "B": "baseline"
+    },
+    "test-23": {
+      "A": "baseline",
+      "B": "candidate"
+    },
+    "test-24": {
+      "A": "baseline",
+      "B": "candidate"
+    },
+    "test-25": {
+      "A": "baseline",
+      "B": "candidate"
+    },
+    "test-26": {
+      "A": "candidate",
+      "B": "baseline"
+    },
+    "test-27": {
+      "A": "candidate",
+      "B": "baseline"
+    },
+    "test-28": {
+      "A": "baseline",
+      "B": "candidate"
+    },
+    "test-29": {
+      "A": "candidate",
+      "B": "baseline"
+    },
+    "test-30": {
+      "A": "candidate",
+      "B": "baseline"
+    }
+  }
+}

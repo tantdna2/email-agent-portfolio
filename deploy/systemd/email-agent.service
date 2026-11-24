@@ -1,0 +1,26 @@
+[Unit]
+Description=Daily exact-sender digest and independent operator-reviewed reply drafts
+OnFailure=email-agent-failure-alert.service
+# Add an operator-reviewed After=/Wants= drop-in for the discovered Gateway unit.
+# Ordering is only an optimization: the runner verifies the actual API/probe.
+
+[Service]
+Type=oneshot
+# Replace @REPO_ROOT@ and @PYTHON@ with absolute production paths in a local copy.
+# @PYTHON@ must match the daily-sender-digest plugin's pythonPath; keep env outside Git.
+WorkingDirectory=@REPO_ROOT@
+ExecStart=@PYTHON@ @REPO_ROOT@/scripts/run_daily_email_report.py
+EnvironmentFile=%h/.config/email-agent/email-agent.env
+Environment=PYTHONUNBUFFERED=1
+UMask=0077
+LimitCORE=0
+NoNewPrivileges=true
+# Backlogs contain arbitrarily many independent model turns. Checkpoints survive
+# shutdown; do not truncate every daily batch at the same fixed 12-minute limit.
+# TASK-020 retains this existing setting; every external operation is bounded.
+TimeoutStartSec=infinity
+KillMode=control-group
+Restart=no
+StandardOutput=journal
+StandardError=journal
+

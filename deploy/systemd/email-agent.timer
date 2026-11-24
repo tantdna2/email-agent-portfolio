@@ -1,0 +1,16 @@
+[Unit]
+Description=Run Email Agent daily at 07:00 Bangkok time (UTC+07)
+
+[Timer]
+OnCalendar=*-*-* 07:00:00 Asia/Bangkok
+Persistent=true
+# Startup and persistent calendar triggers may coalesce or both fire.
+# The Bangkok ledger is authoritative for successful daily completion.
+OnStartupSec=90s
+AccuracySec=1s
+RandomizedDelaySec=0
+Unit=email-agent.service
+
+[Install]
+WantedBy=timers.target
+

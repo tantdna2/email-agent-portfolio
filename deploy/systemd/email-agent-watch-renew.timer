@@ -1,0 +1,11 @@
+[Unit]
+Description=Renew Gmail watch daily before its seven-day expiration
+
+[Timer]
+OnCalendar=daily
+Persistent=true
+RandomizedDelaySec=10min
+Unit=email-agent-watch-renew.service
+
+[Install]
+WantedBy=timers.target

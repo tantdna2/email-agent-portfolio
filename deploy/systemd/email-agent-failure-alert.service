@@ -1,0 +1,22 @@
+[Unit]
+Description=Fixed operator alert after daily email-agent failure
+# No OnFailure on this handler: a transport failure must not create a loop.
+
+[Service]
+Type=oneshot
+# Render absolute paths in a local copy, using the existing production interpreter.
+WorkingDirectory=@REPO_ROOT@
+ExecStart=@PYTHON@ @REPO_ROOT@/scripts/notify_daily_report_failure.py
+# Routing only, outside Git; optional so missing config produces a safe status.
+EnvironmentFile=-%h/.config/email-agent/email-agent-monitoring.env
+Environment=PYTHONUNBUFFERED=1 EMAIL_AGENT_AUTO_SEND=false
+UMask=0077
+LimitCORE=0
+NoNewPrivileges=true
+# 5s lock +180s readiness +3*60s transport +7s backoff + storage overhead.
+TimeoutStartSec=400s
+TimeoutStopSec=5s
+KillMode=control-group
+Restart=no
+StandardOutput=journal
+StandardError=journal

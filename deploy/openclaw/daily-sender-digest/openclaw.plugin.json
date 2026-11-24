@@ -1,0 +1,17 @@
+{
+  "id": "daily-sender-digest",
+  "name": "Daily sender digest",
+  "description": "Private version-bound email reviews and native conversational revisions",
+  "categories": ["other"],
+  "activation": {"onStartup": true},
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["environmentFile", "workerPath", "pythonPath"],
+    "properties": {
+      "environmentFile": {"type": "string"},
+      "workerPath": {"type": "string"},
+      "pythonPath": {"type": "string"}
+    }
+  }
+}

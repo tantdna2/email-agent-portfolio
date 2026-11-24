@@ -1,0 +1,17 @@
+{
+  "id": "email-label-approval",
+  "name": "Email label approval",
+  "description": "On-demand Telegram label recommendation and explicit Gmail approval",
+  "categories": ["other"],
+  "activation": {"onStartup": true},
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["environmentFile", "workerPath", "pythonPath"],
+    "properties": {
+      "environmentFile": {"type": "string"},
+      "workerPath": {"type": "string"},
+      "pythonPath": {"type": "string"}
+    }
+  }
+}

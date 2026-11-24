@@ -1,0 +1,17 @@
+{
+  "id": "email-reply-approval",
+  "name": "Email reply approval",
+  "description": "Private Telegram reply suggestions and explicit Gmail approval",
+  "categories": ["other"],
+  "activation": {"onStartup": true},
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["environmentFile", "workerPath", "pythonPath"],
+    "properties": {
+      "environmentFile": {"type": "string"},
+      "workerPath": {"type": "string"},
+      "pythonPath": {"type": "string"}
+    }
+  }
+}
