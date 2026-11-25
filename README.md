@@ -2,11 +2,11 @@
 
 Email Agent helps an operator keep up with a recurring Gmail sender without composing every reply from scratch. A Python daily digest prepares one summary and reply draft per new message, then lets the operator request edits and approve the current draft in a private Telegram chat.
 
-## What the demo shows
+## Demo video (1:28)
+
+https://github.com/user-attachments/assets/7809a39e-2b74-4afa-8d16-dfe4de12db5d
 
 The demo follows one fictional email through a draft revision. Approving the old draft, approving the revision, and repeating that approval produce simulated send counts of **0 → 1 → 1**. The outbox contains one copy of the revised reply.
-
-<!-- Demo recording link slot. -->
 
 ## Offline quick start
 
